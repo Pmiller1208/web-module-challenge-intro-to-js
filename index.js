@@ -19,7 +19,10 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 18;
+if(votingAge <= 18){
+  console.log('Task 1a', true);
+}
 
 
 /*
@@ -33,8 +36,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let mood = 'Happy';
+let weather = 'Stormy';
+if(weather === 'Stormy'){
+  mood = 'Sad';
+}
+console.log('Task 1b', mood);
 
 
 
@@ -48,7 +55,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let number = '1999'
+Number('1999');
+console.log('Task 1c', number);
 
 
 
@@ -61,10 +70,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(num1, num2){
-  return num1 * num2;
+function multiply(a, b){
+  return a * b;
 }
-
+console.log('Task 1d', multiply(2, 3));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -77,10 +86,10 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7;
 }
-
+console.log('Task 2', dogYears(3));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -129,10 +138,28 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
-}
+function hungryDog(weight, age){
+  if(age >= 1 && weight <= 5){ // 1 year or older, 5 lbs or less
+    return weight * .05;
+  } else if (age >= 1 && weight >= 6 && weight <= 10){ // 1 year or older, 6-10 lbs
+    return weight * .04;
+  } else if (age >= 1 && weight >= 11 && weight <= 15){ // 1 year or older, 11-15 lbs
+    return weight * .03;
+  } else if (age >= 1 && weight >= 15){ // 1 year or older, 15 lbs or more
+    return weight * .02;
+  } else if (age < 1 && age >= .583){ // 1 year or less, 7 months or more
+    return weight * .04;
+  } else if (age <= .583 && age >= .333){ // 7 months or less, 4 months or more
+    return weight * .05;
+  } else if (age < .333){
+    return weight * .10;
+  } else {
+    return 'Something is wrong';
+  }
+  }
 
+
+console.log('Task 3', hungryDog(15, 1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -155,9 +182,26 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let computer = Math.random();
+
+if(computer <= .34){
+  computer = 'rock';
+} else if (computer <= .67){
+  computer = 'paper';
+} else if (computer > .67){
+  computer = 'scissors'
+}
 
 function game(user, computer){
-  /*add your code here*/
+  if(user === computer){
+    return `it's a tie`;
+  } else if (user === 'rock' && computer === 'scissors'){
+    return `you win!`;
+  } else if (user === 'paper' && computer === 'rock'){
+    return `you win!`;
+  } else if (user === 'scissors' && computer === 'paper'){
+
+  }
 }
 
 
